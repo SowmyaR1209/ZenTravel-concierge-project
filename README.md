@@ -115,34 +115,7 @@ Check:    Playground shows a "Do you wish to proceed?" prompt. Reply "no" to can
 
 ---
 
-## Push to GitHub
 
-1. Create a new repo at https://github.com/new
-   - Name: `zentravel-concierge`
-   - Visibility: Public or Private
-   - Do NOT initialize with README (you already have one)
-
-2. In your terminal, navigate into your project folder:
-   ```bash
-   cd zentravel-concierge
-   git init
-   git add .
-   git commit -m "Initial commit: zentravel-concierge ADK agent"
-   git branch -M main
-   git remote add origin https://github.com/<your-username>/zentravel-concierge.git
-   git push -u origin main
-   ```
-
-3. Verify .gitignore includes:
-   ```
-   .env          ← your API key — must NEVER be pushed
-   .venv/
-   __pycache__/
-   *.pyc
-   .adk/
-   ```
-
-⚠️ NEVER push .env to GitHub. Your API key will be exposed publicly.
 
 ---
 
