@@ -121,6 +121,6 @@ See [DEMO_SCRIPT.txt](DEMO_SCRIPT.txt) for the spoken narration walkthrough.
 
 ## Assets
 
-![Architecture Diagram](assets/architecture_diagram.png)
-
 ![Cover Banner](assets/cover_page_banner.png)
+
+![Architecture Diagram](assets/architecture_diagram.png)
