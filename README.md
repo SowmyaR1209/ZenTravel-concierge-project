@@ -27,33 +27,24 @@ make playground        # opens UI at http://localhost:18081
 ## Architecture
 
 ```
-         ┌─────────────────────────────────────────────────┐
-         │              ZenTravel Concierge                  │
-         │                                                   │
-         │  START ──▶ [security_checkpoint]                  │
-         │               │                                   │
-         │          blocked │ safe                           │
-         │               ▼     ▼                             │
-         │      [security  [orchestrator] ◀─── AgentTool ───┤
-         │        event]       │                             │
-         │                     │                             │
-         │              ┌──────┴──────┐                      │
-         │              │ check_      │                      │
-         │              │ advisory    │                      │
-         │              └──────┬──────┘                      │
-         │        consent_     │  safe                       │
-         │        needed ▼     ▼                             │
-         │      [hitl_consent] [final_response]              │
-         │              │                                     │
-         │              └────▶ [final_response]              │
-         │                                                   │
-         │  ┌──────────────────────────────────────────┐    │
-         │  │  MCP Server (stdio)                       │    │
-         │  │  • get_weather                            │    │
-         │  │  • get_travel_advisory ──▶ advisory_agent │    │
-         │  │  • calculate_packing_essentials ──▶ pack  │    │
-         │  └──────────────────────────────────────────┘    │
-         └─────────────────────────────────────────────────┘
+       START ──▶ [security_checkpoint] ──blocked──▶ [security_event]
+                │
+              safe
+                │
+         [orchestrator]
+          │           │
+     AgentTool    AgentTool
+          │           │
+  [advisory_agent] [packing_agent]
+   (MCP tools)     (MCP tools)
+          │
+   [check_advisory]
+          │           │
+    consent_needed   safe
+          │           │
+   [hitl_consent]  [final_response]
+          │
+   [final_response]
 ```
 
 **Agents:**
