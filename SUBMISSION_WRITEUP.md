@@ -13,24 +13,20 @@ Planning a trip is stressful: safety concerns, unpredictable weather, forgetting
 ## Solution Architecture
 
 ```
-START ──▶ [security_checkpoint] ──blocked──▶ [security_event]
-                │
-              safe
-                │
-         [orchestrator]
-          │           │
-     AgentTool    AgentTool
-          │           │
-  [advisory_agent] [packing_agent]
-   (MCP tools)     (MCP tools)
-          │
-   [check_advisory]
-          │           │
-    consent_needed   safe
-          │           │
-   [hitl_consent]  [final_response]
-          │
-   [final_response]
+START
+  └──▶ [security_checkpoint]
+          ├── blocked ──▶ [security_event]
+          └── safe ──▶ [orchestrator]
+                          ├── [advisory_agent]
+                          │      └── uses MCP tools
+                          │             └── [check_advisory]
+                          │                    ├── safe ──▶ [final_response]
+                          │                    └── consent_needed ──▶ [hitl_consent]
+                          │                                                 └── [final_response]
+                          │
+                          └── [packing_agent]
+                                 └── uses MCP tools
+
 ```
 
 **MCP Server Tools:**
