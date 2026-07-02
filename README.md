@@ -4,7 +4,8 @@
 
 ---
 
-Problem Statement
+Problem Statement:
+
 Planning a trip is stressful: safety concerns, unpredictable weather, forgetting essential gear, and navigating advisory warnings. Travellers — especially solo or first-time international travellers — lack a unified, intelligent assistant that proactively surfaces safety risk information, adapts packing advice to real weather data, and pauses for human confirmation before proceeding with high-risk itineraries.
 
 'ZenTravel' - addresses this gap: a secure, multi-agent AI concierge that orchestrates travel safety checks, weather lookups, and personalised packing list generation — while keeping humans in the loop when destinations are flagged as dangerous.
