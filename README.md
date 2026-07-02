@@ -1,4 +1,4 @@
-# ZenTravel Concierge 🌍✈️
+# ZenTravel - Personalized Travel Planner 🌍✈️
 
 > A secure, multi-agent AI travel concierge that creates custom itineraries, checks destination safety advisories, and generates personalised packing lists — powered by Google ADK 2.0.
 
